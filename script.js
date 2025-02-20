@@ -59,3 +59,35 @@ function googleTranslateElementInit() {
     "google_translate_element"
   );
 }
+// Function to generate PDF
+function PrintPage() {
+  let printContent = document.querySelector(".form-result").innerHTML; // Select only the content to print
+  let originalContent = document.body.innerHTML; // Save original page content
+  let hiddenIcons = document.querySelectorAll(".image-excel, .image-excel img");
+
+  // Hide print icon and other elements before printing
+  hiddenIcons.forEach((icon) => (icon.style.display = "none"));
+
+  document.body.innerHTML = `
+      <h2 style="text-align:center; color: red;   background: #007bff;">ABC Mart - Sales Report</h2>
+      ${printContent}
+  `; // Replace page content with the table for printing
+
+  window.print(); // Open print dialog
+
+  // Restore original content after printing
+  document.body.innerHTML = originalContent;
+
+  // Ensure icons are shown again after printing
+  hiddenIcons.forEach((icon) => (icon.style.display = ""));
+}
+
+// Function to export to Excel
+function ToEnxcel() {
+  let table = document.querySelector("table");
+  let ws = XLSX.utils.table_to_sheet(table);
+  let wb = XLSX.utils.book_new();
+
+  XLSX.utils.book_append_sheet(wb, ws, "SalesReport");
+  XLSX.writeFile(wb, "sales_report.xlsx");
+}
