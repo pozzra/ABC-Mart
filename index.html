@@ -9,7 +9,7 @@
       href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/ABC_MART_logo.svg/1200px-ABC_MART_logo.svg.png"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
@@ -130,6 +130,33 @@
           <button type="submit" class="save-btn">Save</button>
           <button type="reset" class="reset-btn">Reset</button>
         </div>
+        <div class="convert-save">
+          <a href="#" onclick="PrintPage(); return false;">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-printer-fill image-excel"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1"
+              />
+              <path
+                d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"
+              />
+            </svg>
+          </a>
+
+          <a href="#" onclick="ToEnxcel(); return false;">
+            <img
+              class="image-excel"
+              src="https://icons.veryicon.com/png/o/miscellaneous/xdh-font-graphics-library/excel-50.png"
+              alt=""
+            />
+          </a>
+        </div>
         <div class="form-result">
           <h2>Result</h2>
           <table>
@@ -147,6 +174,7 @@
               <!-- Dynamic table rows will be added here -->
             </tbody>
           </table>
+
           <div class="total-result">
             <div class="total-tax">
               <table class="table-result">
@@ -164,14 +192,15 @@
         </div>
       </form>
     </div>
+
     <footer>&copy; Kun Amra Student ( ITI ) 2025. All rights reserved.</footer>
   </body>
   <script src="script.js"></script>
-  <!-- <script type="text/javascript">
-
-  </script> -->
   <script
     type="text/javascript"
     src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
   ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
 </html>
